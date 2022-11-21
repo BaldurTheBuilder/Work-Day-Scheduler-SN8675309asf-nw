@@ -1,15 +1,20 @@
 var arrayOfIds = ["hour-9","hour-10","hour-11","hour-12","hour-1","hour-2","hour-3","hour-4","hour-5"];
 var ourCycleOfTimeCards = [];
+var ourCycleOfTextAreas = [];
 
 //cycle through our hours and assign variables to each hour card
 for (let index = 0; index < 9; index++) {
   ourCycleOfTimeCards[index] = document.getElementById(arrayOfIds[index]);
+  ourCycleOfTextAreas[index] = document.getElementById(arrayOfIds[index]+"-textarea");
+  console.log(ourCycleOfTextAreas[index]);
 }
 
 // this code isn't run until the browser has finished rendering all the elements.
 $(function () {
   //when we first run the program, we want to format the time blocks.
   formatTimeColors();
+  loadSavedSchedule();
+  //when we first run the program, we want to load anything saved in local storage.
   //WHEN I open the planner
   //THEN the current day is displayed at the top of the calendar
   var displayTime = setInterval(function(){
@@ -57,8 +62,10 @@ function formatTimeColors() {
   }
 };
 
-
-
 //WHEN I refresh the page
 //THEN the saved events persist
-  //the page loads local storage to display what we saved.
+function loadSavedSchedule() {
+  for (let index = 0; index < ourCycleOfTextAreas.length; index++) {
+    ourCycleOfTextAreas[index].value = localStorage.getItem(arrayOfIds[index]);
+  }
+}
