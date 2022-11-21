@@ -6,7 +6,7 @@ This project is an exercise in using third party API's such as jQuery and day.js
 N/A
 
 ## Usage
-
+https://baldurthebuilder.github.io/Work-Day-Scheduler-SN8675309asf-nw/
 ![alt text](./Assets/Screenshot%202022-11-20%20at%2022-27-42%20Work%20Day%20Scheduler.png)
 ## Credits
 N/A
