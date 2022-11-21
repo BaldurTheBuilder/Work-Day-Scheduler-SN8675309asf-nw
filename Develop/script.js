@@ -18,8 +18,6 @@ $(function () {
   // TODO: Add code to get any user input that was saved in localStorage and set
   // the values of the corresponding textarea elements. HINT: How can the id
   // attribute of each time-block be used to do this?
-  //
-  // TODO: Add code to display the current date in the header of the page.
 });
 
 
@@ -31,17 +29,20 @@ var displayTime = setInterval(function(){
   $('#time-display').text(time);
 },1000);
 
-//WHEN I scroll down
-//THEN I am presented with time blocks for standard business hours
-
 //WHEN I view the time blocks for that day
 //THEN each time block is color-coded to indicate whether it is in the past, present, or future
+  //this format is already set up with classes in the HTML file: #past, #present, and #future.
+  //so this needs to tap into dayjs to detect what color each block should be.
 
+  
 //WHEN I click into a time block
 //THEN I can enter an event
+  //right now the premade blocks have textareas. 
 
 //WHEN I click the save button for that time block
 //THEN the text for that event is saved in local storage
+  //we need to save information for the week in local storage. This is similar to the score tracker from last week's challenge.
 
 //WHEN I refresh the page
 //THEN the saved events persist
+  //the page loads local storage to display what we saved.
